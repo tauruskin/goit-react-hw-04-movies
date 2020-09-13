@@ -18,7 +18,7 @@ const Reviews = lazy(() =>
 const FilmItem = ({ match }) => {
   const id = match.params.movieId;
   const [film, setFilm] = useState([]);
-  const [search, setSearch] = useState([]);
+  const [search, setSearch] = useState('');
   const [from, setFrom] = useState('');
   const location = useLocation();
   const history = useHistory();
@@ -35,9 +35,12 @@ const FilmItem = ({ match }) => {
     history.push({
       pathname: from,
       search: search && `query=${search}`,
-      state: { search },
+      state: {
+        search,
+      },
     });
   };
+
   return (
     <>
       <img src={arrow} alt="arrow_back" className="back" onClick={changePage} />
@@ -52,7 +55,7 @@ const FilmItem = ({ match }) => {
         )}
         <div className="item_info">
           <h2 className="title">{film.original_title}</h2>
-          <p>{`Popularity ${film.popularity}`}</p>
+          <p>{`Popularitu ${film.popularity}`}</p>
           <h3>Overview</h3>
           <p className="overview">{film.overview}</p>
           <h4>Genres</h4>
@@ -64,7 +67,7 @@ const FilmItem = ({ match }) => {
         </div>
       </div>
       <div className="aditional_information">
-        <p className="aditional_title">Aditional Information</p>
+        <p className="aditional_title"> Aditional Information</p>
         <ul>
           <li>
             <NavLink to={`/movies/${id}/cast`}>Cast</NavLink>
@@ -74,7 +77,7 @@ const FilmItem = ({ match }) => {
           </li>
         </ul>
       </div>
-      <Suspense fallback={<h1>Loading...</h1>}>
+      <Suspense fallback={<h1>Loadind...</h1>}>
         <Switch>
           <Route
             path="/movies/:movieId/cast"
@@ -89,4 +92,5 @@ const FilmItem = ({ match }) => {
     </>
   );
 };
+
 export default FilmItem;

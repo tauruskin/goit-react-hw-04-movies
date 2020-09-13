@@ -12,6 +12,7 @@ const Movies = () => {
   const searchValue = ({ target }) => {
     setSearch(target.value);
   };
+
   useEffect(() => {
     if (location.state) {
       setSearch(location.state.search);
@@ -30,6 +31,7 @@ const Movies = () => {
       const arr = data.results;
       setResult(arr);
     });
+
     history.push({
       pathname: `/movies`,
       search: search && `query=${search}`,
@@ -43,6 +45,7 @@ const Movies = () => {
           <button type="submit" className="SearchForm-button">
             <span className="SearchForm-button-label">Search</span>
           </button>
+
           <input
             className="SearchForm-input"
             type="text"
@@ -58,4 +61,5 @@ const Movies = () => {
     </>
   );
 };
+
 export default Movies;
