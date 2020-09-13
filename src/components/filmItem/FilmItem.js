@@ -8,6 +8,7 @@ import {
   useLocation,
 } from 'react-router-dom';
 import './FilmItem.css';
+import arrow from './backArrow.png';
 
 const Cast = lazy(() => import('../cast/Cast' /*webpackChunkName: "Cast" */));
 const Reviews = lazy(() =>
@@ -29,6 +30,7 @@ const FilmItem = ({ match }) => {
       setFrom(location.state.from);
     }
   }, [id, location.state]);
+
   const changePage = () => {
     history.push({
       pathname: from,
@@ -38,11 +40,12 @@ const FilmItem = ({ match }) => {
   };
   return (
     <>
-      {/* <img src={arrow} alt="arrow_back" className="back" onClick={changePage} /> */}
+      <img src={arrow} alt="arrow_back" className="back" onClick={changePage} />
+
       <div className="full_info">
         {film.poster_path && (
           <img
-            src={`https://image.tmdb.org/t/p/original$(film.poster_path}`}
+            src={`https://image.tmdb.org/t/p/original${film.poster_path}`}
             alt={film.original_title}
             className="film_img"
           />
@@ -57,7 +60,7 @@ const FilmItem = ({ match }) => {
             {film.genres &&
               film.genres.map(item => <li key={item.id}>{item.name}</li>)}
           </ul>
-          <br></br>
+          <p></p>
         </div>
       </div>
       <div className="aditional_information">

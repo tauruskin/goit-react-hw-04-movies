@@ -21,7 +21,7 @@ const Cast = ({ id }) => {
           {item.profile_path && (
             <>
               <img
-                src={`https://image.tndb.org/t/p/original${item.profile_path}`}
+                src={`https://image.tmdb.org/t/p/original${item.profile_path}`}
                 alt={item.name}
                 className="cast_img"
               />
