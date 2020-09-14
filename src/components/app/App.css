@@ -15,7 +15,10 @@ body {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
     Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
   color: #212121;
-  background-color: #fff;
+
+  background-image: url('https://image.freepik.com/free-vector/film-reels_46577-2.jpg');
+  background-size: cover;
+  background-position-y: 25%;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -35,4 +38,14 @@ li {
 
 a {
   text-decoration: none;
+  margin-left: 10px;
+}
+
+p {
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+h5 {
+  margin-left: 10px;
 }

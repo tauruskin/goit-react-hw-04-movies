@@ -1,5 +1,5 @@
 .header {
-  background-color: gray;
+  background-color: #8c94a1;
 }
 
 .nav_list {
@@ -15,5 +15,6 @@
 }
 
 .nav_btn_active {
-  color: blue;
+  color: #002142;
+  font-weight: bold;
 }
